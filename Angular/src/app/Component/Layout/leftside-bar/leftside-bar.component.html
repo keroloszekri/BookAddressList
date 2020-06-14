@@ -1,0 +1,42 @@
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar" *ngIf="LoggedService.LoggedIn()">
+
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar direction">
+
+    <!-- Sidebar user panel (optional) -->
+    <div class="user-panel">
+      <div class="pull-left image">
+        <img src="../assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+      </div>
+      <div class="pull-left info">
+        <p>{{user.Name}}</p>
+        <!-- Status -->
+        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+      </div>
+    </div>
+
+
+
+    <!-- Sidebar Menu -->
+    <ul class="sidebar-menu">
+      <li class="header">HEADER</li>
+      <!-- Optionally, you can add icons to the links -->
+      <li><a routerLink="/Home"><i class="fa fa-home"></i> <span>Home</span></a></li>
+      <li><a routerLink="/ADD"><i class="fa fa-dashboard"></i> <span>ADD Person</span></a></li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-group"></i>
+          <span>Multilevel</span>
+          <i class="fa fa-angle-left pull-right">
+          </i></a>
+        <ul class="treeview-menu">
+          <li><a routerLink="/Department">Department</a></li>
+          <li><a routerLink="/Job">Job</a></li>
+        </ul>
+      </li>
+    </ul>
+    <!-- /.sidebar-menu -->
+  </section>
+  <!-- /.sidebar -->
+</aside>

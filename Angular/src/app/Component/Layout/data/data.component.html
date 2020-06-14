@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="row ">
+        <div class="input-group">
+            <input type="text" name="q" [(ngModel)]="TextSearch" class="form-control"
+                placeholder="Search For Any Data ...">
+            <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+            </span>
+        </div>
+    </div>
+    <!-- /.search form -->
+    <div class="row ">
+        <div class="col-md-4 col-sm-6" *ngFor="let item of ListPeople | filter:TextSearch " style="margin-top: 28px;">
+            <div class="box1 mt-4">
+                <img src="{{URL}}/Content/{{item.Img}}" alt="{{item.Name}} image" style="width:100%; height: 300px;">
+                <h3 class="title">{{item.Name}} &nbsp; {{item.Job}}</h3>
+                <ul class="icon">
+                    <!-- <li><a routerLink="/EditComputer/{{item.ID}}" routerLinkActive="active"><i class="fa fa-edit"></i></a></li> -->
+                    <li><a (click)="GitOneProduct(item.ID)" href="#detailsModal" class="details" data-toggle="modal"><i
+                                class="fa fa-arrows-alt"></i></a></li>
+                    <!-- <li><a href="#deleteModal{{item.ID}}" class="delete" data-toggle="modal"><i class="fa fa-eraser"></i></a></li> -->
+                    <li><a routerLink="" href="#"><i class="fa fa-bookmark-o"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="modal fade" id="detailsModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Person</h4>
+                    </div>
+                    <div class="modal-body">
+                        <img class="card-img-top" src="{{URL}}/Content/{{person.Img}}" alt="Image"
+                            style="width: 100%; position: relative;">
+                        <ul class="list-group">
+                            <li class="list-group-item"><b>ID : </b>{{person.ID}}</li>
+                            <li class="list-group-item"><b>Name </b>{{person.Name}}</li>
+                            <li class="list-group-item"><b>Job : </b>{{person.Job}}</li>
+                            <li class="list-group-item"><b>Department : </b> {{person.Department}}</li>
+                            <li class="list-group-item"><b>Phone : </b> {{person.Phone}}</li>
+                            <li class="list-group-item"><b>Date: </b> {{person.Date}}</li>
+                            <li class="list-group-item"><b>Address : </b> {{person.Address}}</li>
+                            <li class="list-group-item"><b>Email : </b> {{person.Email}}</li>
+                            <li class="list-group-item"><b>Age : </b>{{person.Age}}</li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" style="width: 100%;"
+                            data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

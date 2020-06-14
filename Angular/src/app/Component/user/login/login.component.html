@@ -1,0 +1,26 @@
+<form [formGroup]="LoginForm" (ngSubmit)="Login()">
+    <div class="form-group">
+        <label for="Name">UserName</label>
+        <input type="text" class="form-control" placeholder="Enter UserName" id="UserName" formControlName="UserName"
+            [class.is-valid]="LoginForm.controls['UserName'].valid "
+            [class.is-invalid]="LoginForm.controls['UserName'].invalid && LoginForm.controls['UserName'].touched">
+    </div>
+    <div [hidden]="LoginForm.controls['UserName'].valid || LoginForm.controls['UserName'].untouched "
+        class="alert alert-danger">
+        UserName is required
+    </div>
+
+
+    <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" placeholder="Enter password" id="Password"
+            formControlName="Password" [class.is-valid]="LoginForm.controls['Password'].valid "
+            [class.is-invalid]="LoginForm.controls['Password'].invalid && LoginForm.controls['Password'].touched">
+    </div>
+    <div [hidden]="LoginForm.controls['Password'].valid || LoginForm.controls['Password'].untouched "
+        class="alert alert-danger">
+        Password is required
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="LoginForm.invalid">Login </button>
+</form>

@@ -1,0 +1,121 @@
+<div class="row">
+    <div class="col-md-12">
+        <form #f [formGroup]="InsertForm" (ngSubmit)="Add()">
+
+            <div class="form-group">
+                <label for="">Name</label>
+                <input type="text" class="form-control" #Name formControlName="Name" name="Name" id="Name"
+                    [class.is-valid]="InsertForm.controls['Name'].valid "
+                    [class.is-invalid]="InsertForm.controls['Name'].invalid && InsertForm.controls['Name'].touched">
+            </div>
+            <div [hidden]="InsertForm.controls['Name'].valid || InsertForm.controls['Name'].untouched "
+                class="alert alert-danger">
+                Name is required
+            </div>
+
+
+            <div class="form-group">
+                <label for="">Job</label>
+                <select formControlName="Job" class="form-control" [class.is-valid]="InsertForm.controls['Job'].valid "
+                    [class.is-invalid]="InsertForm.controls['Job'].invalid && InsertForm.controls['Job'].touched">
+                    <option *ngFor="let item of ListJob" value={{item.ID}}>{{item.Name}}</option>
+                </select>
+            </div>
+            <div [hidden]="InsertForm.controls['Job'].valid || InsertForm.controls['Job'].untouched "
+                class="alert alert-danger">
+                Job is required
+            </div>
+
+
+            <div class="form-group">
+                <label for="">Department</label>
+                <select formControlName="Department" class="form-control"
+                    [class.is-valid]="InsertForm.controls['Department'].valid "
+                    [class.is-invalid]="InsertForm.controls['Department'].invalid && InsertForm.controls['Department'].touched">
+                    <option *ngFor="let item of ListDepartment" value={{item.ID}}>{{item.Name}}</option>
+                </select>
+            </div>
+            <div [hidden]="InsertForm.controls['Department'].valid || InsertForm.controls['Department'].untouched "
+                class="alert alert-danger">
+                Department is required
+            </div>
+
+
+            <div class="form-group">
+                <label for="">Phone</label>
+                <input type="text" class="form-control" formControlName="Phone" name="Phone" id="Phone"
+                    [class.is-valid]="InsertForm.controls['Phone'].valid "
+                    [class.is-invalid]="InsertForm.controls['Phone'].invalid && InsertForm.controls['Phone'].touched">
+            </div>
+            <div [hidden]="InsertForm.controls['Phone'].valid || InsertForm.controls['Phone'].untouched "
+                class="alert alert-danger">
+                Phone is required
+            </div>
+
+
+            <div class="form-group">
+                <label for="">Date</label>
+                <input type="date" class="form-control" formControlName="Date" name="Date" id="Date"
+                    [class.is-valid]="InsertForm.controls['Date'].valid "
+                    [class.is-invalid]="InsertForm.controls['Date'].invalid && InsertForm.controls['Date'].touched">
+            </div>
+            <div [hidden]="InsertForm.controls['Date'].valid || InsertForm.controls['Date'].untouched "
+                class="alert alert-danger">
+                Date is required
+            </div>
+
+
+            <div class="form-group">
+                <label for="">Address</label>
+                <input type="text" class="form-control" formControlName="Address" name="Address" id="Address"
+                    [class.is-valid]="InsertForm.controls['Address'].valid "
+                    [class.is-invalid]="InsertForm.controls['Address'].invalid && InsertForm.controls['Address'].touched">
+            </div>
+            <div [hidden]="InsertForm.controls['Address'].valid || InsertForm.controls['Address'].untouched "
+                class="alert alert-danger">
+                Address is required
+            </div>
+
+
+            <div class="form-group">
+                <label for="">Email Space</label>
+                <input type="email" class="form-control" formControlName="Email" name="Email" id="Email"
+                    [class.is-valid]="InsertForm.controls['Email'].valid "
+                    [class.is-invalid]="InsertForm.controls['Email'].invalid && InsertForm.controls['Email'].touched">
+            </div>
+            <div [hidden]="InsertForm.controls['Email'].valid || InsertForm.controls['Email'].untouched "
+                class="alert alert-danger">
+                Email is required
+            </div>
+
+
+            <div class="form-group">
+                <label for="">Age</label>
+                <input type="number" class="form-control" formControlName="Age" name="Age" id="Age"
+                    [class.is-valid]="InsertForm.controls['Age'].valid "
+                    [class.is-invalid]="InsertForm.controls['Age'].invalid && InsertForm.controls['Age'].touched">
+            </div>
+            <div [hidden]="InsertForm.controls['Age'].valid || InsertForm.controls['Age'].untouched "
+                class="alert alert-danger">
+                Age is required
+            </div>
+
+
+            <div class="form-group">
+                <label for="">Img</label>
+                <input type="file" (change)="onFileSelected($event)" class="form-control" formControlName="Img"
+                    name="Img" id="Img" [class.is-valid]="InsertForm.controls['Img'].valid "
+                    [class.is-invalid]="InsertForm.controls['Img'].invalid && InsertForm.controls['Img'].touched">
+            </div>
+            <div [hidden]="InsertForm.controls['Img'].valid || InsertForm.controls['Img'].untouched "
+                class="alert alert-danger">
+                Img is required
+            </div>
+
+
+            <button class="btn btn-danger p-1" [disabled]="InsertForm.invalid" type="submit"
+                style="width: 100%;">ADD</button>
+        </form>
+    </div>
+
+</div>

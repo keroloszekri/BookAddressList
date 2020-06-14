@@ -1,0 +1,64 @@
+<form [formGroup]="RegisterForm" (ngSubmit)="Register()">
+
+    <div class="form-group">
+        <label for="Name">UserName</label>
+        <input type="text" class="form-control" placeholder="Enter Name" id="Name" formControlName="Name"
+            [class.is-valid]="RegisterForm.controls['Name'].valid "
+            [class.is-invalid]="RegisterForm.controls['Name'].invalid && RegisterForm.controls['Name'].touched">
+    </div>
+    <div [hidden]="RegisterForm.controls['Name'].valid || RegisterForm.controls['Name'].untouched "
+        class="alert alert-danger">
+        Name is required
+    </div>
+
+
+    <div class="form-group">
+        <label for="email">Email address:</label>
+        <input type="email" class="form-control" placeholder="Enter email" id="Email" formControlName="Email"
+            [class.is-valid]="RegisterForm.controls['Email'].valid "
+            [class.is-invalid]="RegisterForm.controls['Email'].invalid && RegisterForm.controls['Email'].touched">
+    </div>
+    <div [hidden]="RegisterForm.controls['Email'].valid || RegisterForm.controls['Email'].untouched "
+        class="alert alert-danger">
+        Email is required In Format Asd@Asd.Asd
+    </div>
+
+
+    <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" placeholder="Enter password" id="Password"
+            formControlName="Password" [class.is-valid]="RegisterForm.controls['Password'].valid "
+            [class.is-invalid]="RegisterForm.controls['Password'].invalid && RegisterForm.controls['Password'].touched">
+    </div>
+    <div [hidden]="RegisterForm.controls['Password'].valid || RegisterForm.controls['Password'].untouched "
+        class="alert alert-danger">
+        Password is required
+    </div>
+
+
+    <div class="form-group">
+        <label for="conPwd">Confirm Password:</label>
+        <input type="password" class="form-control" placeholder="Enter password" id="ConfirmPassword"
+            formControlName="ConfirmPassword" [class.is-valid]="RegisterForm.controls['Name'].valid "
+            [class.is-invalid]="RegisterForm.controls['ConfirmPassword'].invalid && RegisterForm.controls['ConfirmPassword'].touched">
+    </div>
+    <div [hidden]="RegisterForm.controls['ConfirmPassword'].valid || RegisterForm.controls['ConfirmPassword'].untouched "
+        class="alert alert-danger">
+        Confirm Password is required And should be Identical with password
+    </div>
+
+
+    <div class="form-group">
+        <label for="Address">Address</label>
+        <input type="Address" class="form-control" placeholder="Enter Address" id="Address" formControlName="Address"
+            [class.is-valid]="RegisterForm.controls['Name'].valid "
+            [class.is-invalid]="RegisterForm.controls['Address'].invalid && RegisterForm.controls['Address'].touched">
+    </div>
+    <div [hidden]="RegisterForm.controls['Address'].valid || RegisterForm.controls['Address'].untouched "
+        class="alert alert-danger">
+        Address is required
+    </div>
+
+    <button type="submit" class="btn btn-primary" style="width: 100%;" [disabled]="RegisterForm.invalid">Rigister
+    </button>
+</form>
