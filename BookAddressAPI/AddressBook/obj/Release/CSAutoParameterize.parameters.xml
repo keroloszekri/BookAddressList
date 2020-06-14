@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="CS-Web.config Connection String" description="CS Connection String used in web.config by the application to access the database." defaultValue="Data Source=SQL5056.site4now.net;Initial Catalog=DB_A63087_BookAddress;User Id=DB_A63087_BookAddress_admin;Password=K9HNK9HN;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="F:\\Full\ Stack\\Task\\Tamweely\ Task\\BookAddress\\BookAddressAPI\\AddressBook\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='CS']/@connectionString" />
+  </parameter>
+</parameters>

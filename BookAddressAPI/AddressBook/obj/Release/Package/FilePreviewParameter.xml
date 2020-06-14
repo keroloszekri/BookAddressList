@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="keroloszekrihana-001-site1" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^F:\\Full\ Stack\\Task\\Tamweely\ Task\\BookAddress\\BookAddressAPI\\AddressBook\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^F:\\Full\ Stack\\Task\\Tamweely\ Task\\BookAddress\\BookAddressAPI\\AddressBook\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="CS-Web.config Connection String" description="" value="Data Source=SQL5056.site4now.net;Initial Catalog=DB_A63087_BookAddress;Persist Security Info=True;User ID=DB_A63087_BookAddress_admin;Password=K9HNK9HN" tags="">
+    <parameterEntry kind="XmlFile" scope="F:\\Full\ Stack\\Task\\Tamweely\ Task\\BookAddress\\BookAddressAPI\\AddressBook\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='CS']/@connectionString" />
+  </parameter>
+</parameters>
